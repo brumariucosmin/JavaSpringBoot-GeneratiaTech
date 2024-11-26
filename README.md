@@ -20,4 +20,4 @@ Schema bloc(fara ESP) <br/>
 
 ### Updates
 #### Ver 0.3
-In aceasta versiune , se pot folosi functi de post si de get , pentru a pune si afisa datele din MySql.A fost testat cu PostMan.Sa realizat progres si la partea de hardware , am reusit sa transmitem date direct de la Esp8266 la servar automat.
+In aceasta versiune , se pot folosi metode post si de get , pentru a pune si afisa datele din MySql.A fost testat cu PostMan.Sa realizat progres si la partea de hardware , am reusit sa transmitem date direct de la Esp8266 la servar automat.
