@@ -14,7 +14,7 @@ Schema bloc(fara ESP) <br/>
 ### Software
  Pentru partea software, am utilizat un server Spring Boot conectat la o bază de date, unde pot fi stocate datele primite de la senzori.<br/>
  Planuri de dezvoltare:
- În funcție de timpul disponibil (imedia vine seiunea de la master O-O), intenționez să: <br/>
+ În funcție de timpul disponibil (imediat vine sesiunea de la master O-O), intenționez să: <br/>
 -Adaug o interfață web realizată în HTML și CSS.<br/>
 -Dezvolt o aplicație Android, având deja experiență cu astfel de proiecte.<br/>
 
