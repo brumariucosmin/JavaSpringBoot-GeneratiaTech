@@ -1,5 +1,19 @@
 # Proiect-GeneratiaTech
-Sistem detectie accident rutier SpringBoot
-
-  Acest proiect, pe care l-am realizat anterior, are capacitatea de a detecta când a avut loc un accident, pe baza valorilor furnizate de un giroscop și un accelerometru. În plus, proiectul poate trimite automat un SMS către o persoană de contact, incluzând un link cu locația exactă a accidentului, folosind modulele GSM și GPS. 
-  Într-o prima faza aș dori ca această pagină să aibă capacitatea de a monitoriza în timp real datele primite de la acești senzori(ele vor fi memorate intr-o baza de date), după in funcție de timpul rămas si de ce mai facem cu dumneavoastră la rush-uri, o sa mai adaug si alte funcționalități.
+## Sistem de Detecție a Accidentelor Rutiere cu Spring Boot
+#### Acest proiect a fost realizat pentru a veni în ajutorul unui prieten. Sistemul este compus dintr-o componentă hardware și una software.
+### Hardware
+Partea hardware utilizează un Arduino Nano, la care sunt conectate: <br/>
+-Modul GSM <br/>
+-Modul GPS <br/>
+-Accelerometru/Giroscop <br/>
+![image](https://github.com/user-attachments/assets/17aa12f5-da09-404c-aa41-f07d0b6cde54) <br/>
+Schema bloc(fara ESP) <br/>
+ Accelerometrul și giroscopul furnizează parametrii precum amplitudinea și intensitatea. Pe baza valorilor acestora:<br/>
+ -Se afișează mesaje relevante (am inclus codul Arduino și un videoclip demonstrativ).<br/>
+ -La depășirea unor valori prestabilite, sistemul trimite automat un SMS cu un link către locația accidentului. (Puteți vedea și o captură de ecran a mesajului trimis pentru demonstrație).
+### Software
+ Pentru partea software, am utilizat un server Spring Boot conectat la o bază de date, unde pot fi stocate datele primite de la senzori.<br/>
+ Planuri de dezvoltare:
+ În funcție de timpul disponibil (imedia vine seiunea de la master O-O), intenționez să: <br/>
+-Adaug o interfață web realizată în HTML și CSS.<br/>
+-Dezvolt o aplicație Android, având deja experiență cu astfel de proiecte.<br/>
