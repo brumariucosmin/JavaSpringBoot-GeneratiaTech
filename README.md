@@ -17,3 +17,7 @@ Schema bloc(fara ESP) <br/>
  În funcție de timpul disponibil (imedia vine seiunea de la master O-O), intenționez să: <br/>
 -Adaug o interfață web realizată în HTML și CSS.<br/>
 -Dezvolt o aplicație Android, având deja experiență cu astfel de proiecte.<br/>
+
+### Updates
+#### Ver 0.3
+In aceasta versiune , se pot folosi functi de post si de get , pentru a pune si afisa datele din MySql.A fost testat cu PostMan.Sa realizat progres si la partea de hardware , am reusit sa transmitem date direct de la Esp8266 la servar automat.
