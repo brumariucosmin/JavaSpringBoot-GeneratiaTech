@@ -18,6 +18,7 @@ Schema bloc(fara ESP) <br/>
  În funcție de timpul disponibil (imediat vine sesiunea de la master O-O), intenționez să: <br/>
 -Adaug o interfață web realizată în HTML și CSS.<br/>
 -Dezvolt o aplicație Android, având deja experiență cu astfel de proiecte.<br/>
+-Alte functionalitati in functie de sugestile dumneavoastra.<br/>
 
 ### Updates
 #### Ver 0.3
