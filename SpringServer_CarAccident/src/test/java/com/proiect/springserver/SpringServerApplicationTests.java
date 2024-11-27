@@ -19,9 +19,9 @@ class SpringServerApplicationTests {
 	@Test
 	void addAccidentTest() {
 		Accident accident = new Accident();
-		//accident.setName("ceva1");
-		//accident.setLocation("ceva2);
-		//accident.setBranch("ceva3");
+		//accident.setAmplitude("ceva1");
+		//accident.setIntensity("ceva2);
+		//accident.setLocation("ceva3");
 		accidentDao.save(accident);
 	}
 
