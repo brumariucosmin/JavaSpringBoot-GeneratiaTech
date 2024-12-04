@@ -1,7 +1,7 @@
 # Proiect-GeneratiaTech
 
 #### Sistem de Detecție a Accidentelor Rutiere cu Spring Boot </br>
-Acest proiect a fost realizat pentru a veni în ajutorul unui prieten. Sistemul este compus dintr-o componentă hardware și una software.
+Sistemul este compus dintr-o componentă hardware și una software.
 ### Hardware
 Partea hardware utilizează un Arduino Nano, la care sunt conectate: <br/>
 -Modul GSM <br/>
