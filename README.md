@@ -10,7 +10,9 @@ https://www.youtube.com/watch?v=loYEnyAMroQ
 The hardware part uses an Arduino Nano, to which the following modules are connected:  
 - GSM Module  
 - GPS Module  
-- Accelerometer/Gyroscope  
+- Accelerometer/Gyroscope
+- Level Shifter (Arduino works in 5V while NodeMcu in 3.3V)
+- NodeMCU with integrated ESP8266 
 
 ![Schema electrica](https://github.com/user-attachments/assets/9f97cefb-1f2f-41aa-92eb-41a8e3a3505e)
  Electrical Schematic Diagram 
