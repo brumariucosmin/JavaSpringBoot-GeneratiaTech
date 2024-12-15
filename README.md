@@ -70,6 +70,72 @@ SELECT * FROM accident;
 
 - Each user's data is stored individually, meaning no one else can access your information without the proper login credentials. This page is protected by Spring Boot Security, ensuring access is restricted until you successfully log in.
 
+
+## Note on Endpoints
+## You don't need to interact directly with these endpoints if you're logged in. All functionalities are seamlessly integrated into the user interface, allowing you to access them through buttons and forms.
+
+### `/list-accidents`
+
+- **HTTP Method**: GET  
+- **Description**: Retrieves a list of all accidents associated with the logged-in user. The data is fetched from the database, enabling users to view all their saved accident records.  
+- **Accessible At**: `http://localhost:8080/list-accidents`
+
+---
+
+### `/add-accident` (GET)
+
+- **HTTP Method**: GET  
+- **Description**: Displays the page for adding a new accident. An empty `Accident` object is created and sent to the page for the user to fill in.  
+- **Accessible At**: `http://localhost:8080/add-accident`
+
+---
+
+### `/add-accident` (POST)
+
+- **HTTP Method**: POST  
+- **Description**: Submits the accident data filled in by the user on the form. The accident is validated, and if no errors are found, it is saved to the database.  
+- **Accessible At**: `http://localhost:8080/add-accident`
+
+---
+
+### `/delete-accident`
+
+- **HTTP Method**: GET  
+- **Description**: Deletes a specific accident from the database. The ID of the accident to be deleted must be specified as a query parameter.  
+- **Accessible At**: `http://localhost:8080/delete-accident?id=<accident_id>`
+
+---
+
+### `/update-accident` (GET)
+
+- **HTTP Method**: GET  
+- **Description**: Opens the page for updating an existing accident. The form is preloaded with the current data of the specified accident.  
+- **Accessible At**: `http://localhost:8080/update-accident?id=<accident_id>`
+
+---
+
+### `/update-accident` (POST)
+
+- **HTTP Method**: POST  
+- **Description**: Receives the updated accident data from the form and saves the changes to the database.  
+- **Accessible At**: `http://localhost:8080/update-accident`
+
+---
+
+### `/delete-all-accident`
+
+- **HTTP Method**: GET  
+- **Description**: Deletes all accidents from the database.  
+- **Accessible At**: `http://localhost:8080/delete-all-accident`
+
+---
+
+## Authentication
+
+All endpoints are protected by authentication. Users must be logged in to access them.
+
+---
+## Description of Functionalities
 ### Accident Detection
 The system continuously monitors acceleration and orientation changes using the MPU-6050 sensor. It calculates the amplitude of acceleration and evaluates it against three trigger levels:
 - **Level 1**: Detects minor acceleration deviations (e.g., bumps or minor movements).
