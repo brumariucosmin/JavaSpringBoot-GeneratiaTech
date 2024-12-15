@@ -24,6 +24,9 @@ Depending on the available time (the master's O-O session is coming up), I plan 
 #### Ver 0.3  
 In this version, POST and GET methods can be used to send and display data from MySQL. It was tested with PostMan. Progress has also been made on the hardware side, as we successfully transmitted data directly from the ESP8266 to the server automatically.
 
+#### Ver 1.0 
+In this version, the core functionalities of the project have been successfully implemented. For more details, please refer to the comprehensive description below.
+
 ---
 
 ## User Guide for CrashGuard System
