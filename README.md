@@ -9,8 +9,8 @@ The hardware part uses an Arduino Nano, to which the following modules are conne
 - GPS Module  
 - Accelerometer/Gyroscope  
 
-![image](https://github.com/user-attachments/assets/17aa12f5-da09-404c-aa41-f07d0b6cde54)  
-Block diagram (without ESP)  
+![Schema electrica](https://github.com/user-attachments/assets/9f97cefb-1f2f-41aa-92eb-41a8e3a3505e)
+ Electrical Schematic Diagram 
 
 ## Software  
 For the software part, I used a Spring Boot server connected to a database where the data received from the sensors is stored.  
