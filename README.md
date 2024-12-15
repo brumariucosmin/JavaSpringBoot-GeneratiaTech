@@ -47,7 +47,7 @@ mysqlsh
 \use Accidents
 
 ### Step 5: View the contents of the database
-\sql
+\sql <br>
 SELECT * FROM accident;
 
 ### Step 6: Access the web interface in the browser
