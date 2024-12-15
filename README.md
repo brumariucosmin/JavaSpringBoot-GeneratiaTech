@@ -2,6 +2,9 @@
 
 #### Road Accident Detection System with Spring Boot  
 The system consists of both hardware and software components.  
+Video presentation -
+https://www.youtube.com/watch?v=loYEnyAMroQ
+
 
 ## Hardware  
 The hardware part uses an Arduino Nano, to which the following modules are connected:  
