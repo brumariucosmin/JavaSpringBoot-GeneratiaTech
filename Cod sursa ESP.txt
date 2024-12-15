@@ -1,0 +1,96 @@
+#include <ESP8266WiFi.h>
+#include <WiFiClient.h>
+
+// Configurația rețelei WiFi
+const char* ssid = "R8";
+const char* password = "sebi1234";
+
+// Configurația serverului
+const char* serverName = "192.168.1.252";
+const int serverPort = 8080;
+const char* endpoint = "/accident/save";
+
+// WiFi Client
+WiFiClient client;
+
+// Date simulate pentru JSON
+String intensities[] = {"Light", "Medium", "Dangerous", "Very Dangerous"};
+float amplitudes[] = {4.5, 7.8, 10.2, 12.5, 3.1};
+String locations[] = {"45.123456,25.123456", "45.654321,25.654321", "44.987654,24.987654"};
+
+// Funcție pentru trimiterea JSON-ului
+void sendJson(String jsonData) {
+  if (client.connect(serverName, serverPort)) {
+    Serial.println("Connected to server");
+
+    // Crearea cererii HTTP POST
+    String httpRequest = String("POST ") + endpoint + " HTTP/1.1\r\n" +
+                         "Host: " + String(serverName) + "\r\n" +
+                         "Content-Type: application/json\r\n" +
+                         "Content-Length: " + String(jsonData.length()) + "\r\n\r\n" +
+                         jsonData;
+
+    // Trimite cererea la server
+    client.print(httpRequest);
+    Serial.println("POST request sent:");
+    Serial.println(jsonData);
+
+    // Așteaptă răspunsul serverului
+    while (client.connected() && !client.available()) {
+      delay(100);
+    }
+
+    // Printează răspunsul serverului
+    while (client.available()) {
+      String response = client.readString();
+      Serial.println("Server response:");
+      Serial.println(response);
+    }
+
+    // Închide conexiunea
+    client.stop();
+    Serial.println("Connection closed");
+  } else {
+    Serial.println("Connection to server failed");
+  }
+}
+
+void setup() {
+  Serial.begin(9600);
+
+  // Conectare la rețeaua WiFi
+  WiFi.begin(ssid, password);
+  Serial.print("Connecting to WiFi");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("\nWiFi connected!");
+  Serial.println("IP Address: " + WiFi.localIP().toString());
+}
+
+void loop() {
+  // Trimite 10 JSON-uri
+  for (int i = 0; i < 10; i++) {
+    // Generare valori simulate pentru JSON
+    String intensity = intensities[random(0, 4)]; // Alege o intensitate
+    float amplitude = amplitudes[random(0, 5)];  // Alege o amplitudine
+    String location = locations[random(0, 3)];   // Alege o locație
+
+    // Construiește JSON-ul
+    String jsonData = "{\"intensity\":\"" + intensity +
+                      "\",\"amplitude\":\"" + String(amplitude) +
+                      "\",\"location\":\"" + location + "\"}";
+
+    Serial.println("Generated JSON:");
+    Serial.println(jsonData);
+
+    // Trimite JSON-ul către server
+    sendJson(jsonData);
+
+    delay(2000); // Pauză de 2 secunde între fiecare cerere
+  }
+
+  Serial.println("All 10 JSONs sent. Waiting for the next cycle...");
+  delay(30000); // Așteaptă 30 de secunde înainte de următorul ciclu
+}
